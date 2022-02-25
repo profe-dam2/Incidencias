@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="Incidencias.Views.FormView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:Incidencias.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="800">
+    <UserControl.Background>
+        <SolidColorBrush Color="Gray" Opacity="0.4"/>
+    </UserControl.Background>
+    <StackPanel>
+        <TextBlock Text="FORMULARIO" HorizontalAlignment="Center" Margin="20" FontSize="25" FontFamily="MV Boli" FontWeight="ExtraBold"/>
+        <StackPanel>
+            <TextBlock Text="TIPO AVERIA" HorizontalAlignment="Center" FontWeight="Black"/>
+            <ComboBox Margin="0,0,0,10" Width="200" Text="{Binding Incidencia.Tipo}" >
+                <ComboBoxItem Content="Mecánica"/>
+                <ComboBoxItem Content="Eléctrica"/>
+                <ComboBoxItem Content="Electrónica"/>
+                <ComboBoxItem Content="Hardware"/>
+                <ComboBoxItem Content="Software"/>
+            </ComboBox>
+            <TextBlock Text="DESCRIPCIÓN" HorizontalAlignment="Center" FontWeight="Black"/>
+            <TextBox Text="{Binding Incidencia.Descripcion}" AcceptsReturn="True" TextWrapping="Wrap" Width="200" Height="100" FontStyle="Italic"/>
+            <TextBlock Text="DEPARTAMENTO" HorizontalAlignment="Center" FontWeight="Black"/>
+            <ComboBox Margin="0,0,0,10" Width="200" SelectedItem="{Binding Incidencia.Dpto}" ItemsSource="{Binding ListaDepartamentos}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="DropDownOpened">
+                        <i:InvokeCommandAction Command="{Binding UpdateDptoCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+            <TextBlock Text="PRIORIDAD" HorizontalAlignment="Center" FontWeight="Black"/>
+            <ComboBox Margin="0,0,0,20" Width="200" SelectedIndex="0" Text="{Binding Incidencia.Prioridad}">
+                <ComboBoxItem Content="BAJA"/>
+                <ComboBoxItem Content="MEDIA"/>
+                <ComboBoxItem Content="ALTA"/>
+            </ComboBox>
+            <TextBlock Text="FECHA INCIDENCIA" HorizontalAlignment="Center" FontWeight="Black"/>
+            <DatePicker Width="200" SelectedDate="{Binding Incidencia.Fecha, StringFormat=dd/MM/yyyy}"/>
+            <TextBlock Margin="0,20,0,10" Text="DATOS CONTACTO" HorizontalAlignment="Center" FontWeight="Black"/>
+            <Grid Width="200">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="130"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="DNI " HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Width="200" Text="{Binding Incidencia.DNI}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="email " HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Width="200" Text="{Binding Incidencia.Email}"/>
+            </Grid>
+            <Button Content="CREAR" Width="200" Margin="20" FontSize="15" FontWeight="Black" Foreground="White"
+                    Command="{Binding InsertIncidenciaCommand}">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.6"/>
+                </Button.Background>
+            </Button>
+
+        </StackPanel>
+    </StackPanel>
+</UserControl>

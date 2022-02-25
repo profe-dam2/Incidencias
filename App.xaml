@@ -1,0 +1,28 @@
+﻿<Application x:Class="Incidencias.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Incidencias"
+             xmlns:views="clr-namespace:Incidencias.Views"
+             xmlns:viewmodels="clr-namespace:Incidencias.ViewModels"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+                <views:HomeView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewmodels:ResumenViewModel}">
+                <views:ResumenView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:FormViewModel}">
+                <views:FormView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:ReportViewModel}">
+                <views:ReportView/>
+            </DataTemplate>
+        </ResourceDictionary>
+        
+    </Application.Resources>
+</Application>
