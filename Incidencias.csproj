@@ -172,6 +172,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InformeIncidenciasFechas.rdlc" />
+    <EmbeddedResource Include="Reports\InformeIncidenciasDNI.rdlc" />
     <EmbeddedResource Include="Reports\InformeIncidencias.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

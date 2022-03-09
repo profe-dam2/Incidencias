@@ -24,5 +24,17 @@ namespace Incidencias.Views
         {
             InitializeComponent();
         }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            Fecha1.Visibility = Visibility.Visible;
+            Fecha2.Visibility = Visibility.Visible;
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Fecha1.Visibility = Visibility.Collapsed;
+            Fecha2.Visibility = Visibility.Collapsed;
+        }
     }
 }

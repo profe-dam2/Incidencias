@@ -17,6 +17,26 @@ namespace Incidencias.Services.DataSet
         private static empleadoTableAdapter empleadoAdapter = new empleadoTableAdapter();
         private static InformeIncidenciasTableAdapter adapter = new InformeIncidenciasTableAdapter();
         
+        public static DataTable GetDataByFechas(DateTime fecha1, DateTime fecha2)
+        {
+            return adapter.GetDataByFechas(fecha1.ToString(), fecha2.ToString());
+        }
+
+
+        public static DataTable GetDataByDNIFechas(string dni, DateTime fecha1, DateTime fecha2)
+        {
+            return adapter.GetDataByDNIFechas(dni, fecha1.ToString(), fecha2.ToString());
+        }
+
+        public static DataTable GetDataByFecha(DateTime fecha)
+        {
+            return adapter.GetDataByFecha(fecha.ToString());
+        }
+
+        public static DataTable GetDataByDNI(string dni)
+        {
+            return adapter.GetDataByDNI(dni);
+        }
 
         public static DataTable GetInformeIncidencias()
         {
@@ -44,7 +64,7 @@ namespace Incidencias.Services.DataSet
         {
             try
             {
-                incidenciasAdapter.Insert(i.Tipo, i.Descripcion, i.Dpto.idDpto, i.Prioridad, i.Fecha, i.IdEmpleado, i.Email);
+                incidenciasAdapter.Insert(i.Tipo, i.Descripcion,i.Prioridad ,i.Fecha,i.IdEmpleado,i.Email, i.Dpto.nombreDpto);
                 return true;
             }
             catch

@@ -44,7 +44,7 @@ namespace Incidencias.Commands
         public UpdateViewCommand(MainViewModel mainViewModel)
         {
             this.mainViewModel = mainViewModel;
-            this.mainViewModel.SelectedViewModel = new FormViewModel();
+            this.mainViewModel.SelectedViewModel = new ResumenViewModel(this);
             reportViewModel = new ReportViewModel();
         }
     }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Incidencias"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="800">
+        Title="MainWindow" Height="800" Width="1050">
     <Window.Background>
         <SolidColorBrush Color="White" Opacity="0.5"/>
     </Window.Background>

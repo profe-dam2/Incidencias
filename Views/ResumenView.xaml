@@ -12,6 +12,36 @@
             <TextBlock Text="Consultar todas las incidencias"/>
             <Button Margin="10,0" Content="CONSULTAR" Command="{Binding ConsultarCommand}" CommandParameter="todos"/>
         </StackPanel>
-        
+        <!--
+        <StackPanel Margin="20" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Consultar incidencias por DNI: " VerticalAlignment="Center"/>
+            <TextBox Width="100" Text="{Binding DNI}"/>
+            
+            <Button Margin="10,0" Content="CONSULTAR" Command="{Binding ConsultarCommand}" CommandParameter="dni"/>
+        </StackPanel>
+        -->
+
+        <StackPanel Margin="20" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Consultar incidencias por fecha: " VerticalAlignment="Center"/>
+            <DatePicker SelectedDate="{Binding Fecha1, StringFormat=dd-MM-yyyy}"/>
+            <Button Margin="10,0" Content="CONSULTAR" Command="{Binding ConsultarCommand}" CommandParameter="fecha"/>
+        </StackPanel>
+
+        <StackPanel Margin="20" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Consultar incidencias por fecha: " VerticalAlignment="Center"/>
+            <DatePicker SelectedDate="{Binding Fecha1, StringFormat=dd-MM-yyyy}"/>
+            <DatePicker SelectedDate="{Binding Fecha2, StringFormat=dd-MM-yyyy}"/>
+            <Button Margin="10,0" Content="CONSULTAR" Command="{Binding ConsultarCommand}" CommandParameter="fechas"/>
+        </StackPanel>
+
+        <StackPanel Margin="20" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Consultar incidencias por fecha: " VerticalAlignment="Center"/>
+            <TextBox Width="100" Text="{Binding DNI}"/>
+            <CheckBox IsChecked="{Binding checkFiltro}" VerticalAlignment="Center" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" />
+            <DatePicker x:Name="Fecha1" Visibility="Collapsed" SelectedDate="{Binding Fecha1, StringFormat=dd-MM-yyyy}"/>
+            <DatePicker x:Name="Fecha2" Visibility="Collapsed" SelectedDate="{Binding Fecha2, StringFormat=dd-MM-yyyy}"/>
+            <Button Margin="10,0" Content="CONSULTAR" Command="{Binding ConsultarCommand}" CommandParameter="dniFechas"/>
+        </StackPanel>
+
     </StackPanel>
 </UserControl>

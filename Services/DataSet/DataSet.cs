@@ -13,3 +13,12 @@ namespace Incidencias.Services.DataSet.DataSetTableAdapters {
     public partial class IndicenciasTableAdapter {
     }
 }
+
+namespace Incidencias.Services.DataSet.DataSetTableAdapters
+{
+
+
+    public partial class InformeIncidenciasTableAdapter
+    {
+    }
+}
